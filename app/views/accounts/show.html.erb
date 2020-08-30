@@ -1,8 +1,34 @@
 <h1>SHOW FOR ACCOUNT</h1>
+<br>
+<table>
+  <th>Equipment</th>
+  <tr>
+    <td>Truck:</td>
+    <!-- Checks if a truck is tied to the account -->
+    <% if @truck != nil %>
+      <td><%= @truck.make %>></td>
+      <td><a class="btn btn-primary" href="#" role="button" >Change</a></td>
+    <% else %>
+      <td>None</td>
+      <td><a class="btn btn-primary" href="<%= new_truck_path %>" role="button" >Add</a></td>
+    <% end %>
+  </tr>
+  <tr>
+    <td>Trailer:</td>
+    <!-- Checks if a trailer is tied to the account -->
+    <% if @trailer != nil %>
+      <td><%= @trailer.make %>></td>
+      <td><a class="btn btn-primary" href="#" role="button" >Change</a></td>
+    <% else %>
+      <td>None</td>
+      <td><a class="btn btn-primary" href="<%= new_trailer_path %>" role="button" >Add</a></td>
+    <% end %>
+  </tr>
+</table>
 
 
 
 
 
 <%= link_to 'Edit', edit_account_path(@account) %> |
-<%= link_to 'Back', accounts_path %>
+<%= link_to 'Back', root_path %>

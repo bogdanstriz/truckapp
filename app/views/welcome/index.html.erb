@@ -25,7 +25,7 @@
   </div>
   <!---->
   <div class="card">
-    <img class="card-img-top" src="..." alt="Card image cap">
+    <%= image_tag "profilestock.jpg", class:"card-img-top" %>
     <div class="card-body">
       <!-- Checks if account already created -->
       <% if current_user && current_user.account != nil %>

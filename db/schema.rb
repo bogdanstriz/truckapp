@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_30_113100) do
+ActiveRecord::Schema.define(version: 2020_08_30_144627) do
 
   create_table "accounts", force: :cascade do |t|
     t.float "total"
@@ -25,16 +25,6 @@ ActiveRecord::Schema.define(version: 2020_08_30_113100) do
   create_table "admins", force: :cascade do |t|
     t.string "name"
     t.float "balance"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "drivers", force: :cascade do |t|
-    t.string "fname"
-    t.string "lname"
-    t.string "dob"
-    t.string "email"
-    t.integer "phone"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -69,8 +59,8 @@ ActiveRecord::Schema.define(version: 2020_08_30_113100) do
     t.integer "mileage"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "truck_id", null: false
-    t.index ["truck_id"], name: "index_trailers_on_truck_id"
+    t.integer "account_id", null: false
+    t.index ["account_id"], name: "index_trailers_on_account_id"
   end
 
   create_table "transactions", force: :cascade do |t|
@@ -122,7 +112,7 @@ ActiveRecord::Schema.define(version: 2020_08_30_113100) do
   add_foreign_key "repairs", "trailers"
   add_foreign_key "repairs", "trucks"
   add_foreign_key "repairs", "units"
-  add_foreign_key "trailers", "trucks"
+  add_foreign_key "trailers", "accounts"
   add_foreign_key "transactions", "accounts"
   add_foreign_key "trucks", "accounts"
   add_foreign_key "units", "trailers"

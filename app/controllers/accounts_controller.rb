@@ -11,6 +11,8 @@ class AccountsController < ApplicationController
   # GET /accounts/1
   # GET /accounts/1.json
   def show
+    @truck = current_user.account.truck
+    @trailer = current_user.account.trailer
   end
 
   # GET /accounts/new

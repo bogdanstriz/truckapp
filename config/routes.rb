@@ -6,7 +6,12 @@ Rails.application.routes.draw do
   #RESTful routes
   resources :loads
   resources :accounts
-  resources :drivers
+  resources :trucks
+  resources :trailers
+  resources :units
+  resources :repairs
+  resources :transactions
+  
 
   root 'welcome#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
