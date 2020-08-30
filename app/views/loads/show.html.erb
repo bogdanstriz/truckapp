@@ -1,0 +1,16 @@
+<!-- Created by Bogdan Strizheus on 08/28/2020 -->
+
+
+<p>
+  <strong>Title:</strong>
+  <%= @load.title %>
+</p>
+ 
+<p>
+  <strong>Text:</strong>
+  <%= @load.text %>
+</p>
+
+<!-- Links to go back -->
+<%= link_to 'Edit', edit_load_path(@load) %> |
+<%= link_to 'Back', loads_path %>

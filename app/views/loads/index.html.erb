@@ -1,0 +1,24 @@
+<!-- Created by Bogdan Strizheus on 08/28/2020 -->
+
+
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Text</th>
+        <th></th>
+    </tr>
+
+    <% @loads.each do |load| %>
+        <tr>
+            <td><%= load.title %></td>
+            <td><%= load.text %></td>
+            <td><%= link_to 'Show', load_path(load) %></td>
+            <td><%= link_to 'Edit', edit_load_path(load) %></td>
+            <td><%= link_to 'Destroy', load_path(load),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+    <% end %>
+</table>
+
+<%= link_to 'Back', root_path %>
